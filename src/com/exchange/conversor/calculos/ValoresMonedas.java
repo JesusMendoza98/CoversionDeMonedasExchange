@@ -1,3 +1,10 @@
+package com.exchange.conversor.calculos;
+
+import com.exchange.conversor.currencyvalues.CurrencyCode;
+import com.exchange.conversor.currencyvalues.CurrencyCodeObject;
+import com.exchange.conversor.consultas.ConsultaApiExchange;
+import com.exchange.conversor.textos.Textos;
+
 public class ValoresMonedas {
     public void resultadoconversion(double cantidad, String siglaDivisa, int eleccionDivisa) {
         double dolar = 0;
@@ -14,7 +21,7 @@ public class ValoresMonedas {
 
         // Verificar si las tasas de cambio se obtuvieron correctamente
         if (currencyCodeObject != null) {
-            // Crear una instancia de CurrencyCode utilizando las tasas de cambio obtenidas
+            // Crear una instancia de com.exchange.conversor.currencyvalues.CurrencyCode utilizando las tasas de cambio obtenidas
             CurrencyCode currencyCode = new CurrencyCode(currencyCodeObject);
             dolar = currencyCode.getDolar();
             pesoArgentino = currencyCode.getPeso_argentino();

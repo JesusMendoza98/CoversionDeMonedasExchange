@@ -1,3 +1,6 @@
+package com.exchange.conversor.consultas;
+
+import com.exchange.conversor.currencyvalues.CurrencyCodeObject;
 import com.google.gson.*;
 
 import java.io.InputStream;

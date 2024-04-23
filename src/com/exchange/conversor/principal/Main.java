@@ -1,3 +1,7 @@
+package com.exchange.conversor.principal;
+
+import com.exchange.conversor.textos.Textos;
+import com.exchange.conversor.calculos.ValoresMonedas;
 
 import java.util.Scanner;
 

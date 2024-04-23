@@ -1,3 +1,5 @@
+package com.exchange.conversor.textos;
+
 public class Textos {
 
     public static void lineaFinal() {

@@ -1,3 +1,5 @@
+package com.exchange.conversor.currencyvalues;
+
 public class CurrencyCode implements Comparable<CurrencyCode> {
     private double dolar;
     private double peso_argentino;
