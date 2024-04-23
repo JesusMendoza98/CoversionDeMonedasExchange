@@ -25,7 +25,7 @@ public class CurrencyCode implements Comparable<CurrencyCode> {
     public double getPeso_argentino() {
         return peso_argentino;
     }
-    
+
 
     public CurrencyCode(CurrencyCodeObject CurrencyCodeObject){
 this.dolar = CurrencyCodeObject.USD();
