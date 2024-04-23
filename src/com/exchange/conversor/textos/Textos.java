@@ -2,9 +2,7 @@ package com.exchange.conversor.textos;
 
 public class Textos {
 
-    public static void lineaFinal() {
-        System.out.println("::::::::::::::::::::::::::::::::");
-    }
+
     public static void menuDeOpciones() {
         System.out.println("""
    ┌────────────────────────────────────────────────┐
@@ -18,6 +16,7 @@ public class Textos {
    │     4      │   Real Brasileño a Dolar          │
    │     5      │   Dolares a Bolivares             │
    │     6      │   Bolivares a Dolares             │
+   │     7      │   Salir del Programa              │
    └────────────────────────────────────────────────┘""");
     }
     }

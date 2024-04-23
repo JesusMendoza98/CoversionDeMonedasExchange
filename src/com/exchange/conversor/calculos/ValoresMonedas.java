@@ -7,8 +7,8 @@ import com.exchange.conversor.textos.Textos;
 
 public class ValoresMonedas {
     public void resultadoconversion(double cantidad, String siglaDivisa, int eleccionDivisa) {
-        double operacionDivisa = 0;
-        double tipoCambio = 0;
+        double operacionDivisa;
+        double tipoCambio;
 
         ConsultaApiExchange consultaApiExchange = new ConsultaApiExchange();
 
@@ -29,47 +29,39 @@ public class ValoresMonedas {
         operacionDivisa = cantidad * tipoCambio;
 
         // Mostrar el resultado
-        Textos.lineaFinal();
-        System.out.println(":::::Tu cantidad: " + cantidad + " " + siglaDivisa + "::::::");
-        System.out.println(":::Tu resultado: " + operacionDivisa + " " + obtenerMonedaDestino(eleccionDivisa) + "::::");
-        Textos.lineaFinal();
+
+        System.out.println("┌────────────────────────────────────────────────┐");
+        System.out.println("    Tu cantidad:  " + cantidad + " " + siglaDivisa);
+        System.out.println("    Tu resultado: " + operacionDivisa + " " + obtenerMonedaDestino(eleccionDivisa) );
+        System.out.println("└────────────────────────────────────────────────┘");
     }
 
     // Método auxiliar para obtener el tipo de cambio según la elección de divisa
     private double obtenerTipoCambio(int eleccionDivisa, CurrencyCode currencyCode) {
-        switch (eleccionDivisa) {
-            case 1: // Dólar a Peso Argentino
-                return currencyCode.getPeso_argentino();
-            case 2: // Peso Argentino a Dólar
-                return currencyCode.getDolar();
-            case 3: // Dólar a Real Brasileño
-                return currencyCode.getReal_brasileño();
-            case 4: // Real Brasileño a Dólar
-            case 6: // Bolivianos a Dólar
-                return currencyCode.getDolar();
-            case 5: // Dólar a Bolivianos
-                return currencyCode.getPeso_boliviano();
-            default:
-                return 0; // Valor predeterminado en caso de elección inválida
-        }
+        return switch (eleccionDivisa) {
+            case 1 -> // Dólar a Peso Argentino
+                    currencyCode.getPeso_argentino();
+            case 2 -> // Peso Argentino a Dólar
+                    currencyCode.getDolar();
+            case 3 -> // Dólar a Real Brasileño
+                    currencyCode.getReal_brasileño(); // Real Brasileño a Dólar
+            case 4, 6 -> // Bolivianos a Dólar
+                    currencyCode.getDolar();
+            case 5 -> // Dólar a Bolivianos
+                    currencyCode.getPeso_boliviano();
+            default -> 0; // Valor predeterminado en caso de elección inválida
+        };
     }
 
     // Método auxiliar para obtener la moneda de destino según la elección de divisa
     private String obtenerMonedaDestino(int eleccionDivisa) {
-        switch (eleccionDivisa) {
-            case 1:
-                return "ARS"; // Peso Argentino
-            case 2:
-            case 4:
-            case 6:
-                return "USD"; // Dólar
-            case 3:
-                return "BRL"; // Real Brasileño
-            case 5:
-                return "BOB"; // Bolivianos
-            default:
-                return "";
-        }
+        return switch (eleccionDivisa) {
+            case 1 -> "ARS"; // Peso Argentino
+            case 2, 4, 6 -> "USD"; // Dólar
+            case 3 -> "BRL"; // Real Brasileño
+            case 5 -> "BOB"; // Bolivianos
+            default -> "";
+        };
     }
 
 }
