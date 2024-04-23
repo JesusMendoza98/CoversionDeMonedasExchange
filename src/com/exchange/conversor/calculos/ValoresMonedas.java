@@ -3,7 +3,7 @@ package com.exchange.conversor.calculos;
 import com.exchange.conversor.currencyvalues.CurrencyCode;
 import com.exchange.conversor.currencyvalues.CurrencyCodeObject;
 import com.exchange.conversor.consultas.ConsultaApiExchange;
-import com.exchange.conversor.textos.Textos;
+
 
 public class ValoresMonedas {
     public void resultadoconversion(double cantidad, String siglaDivisa, int eleccionDivisa) {
