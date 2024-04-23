@@ -1,18 +1,5 @@
 public class Textos {
-    public static void textoBienvenida(){
-        System.out.println("""
-                \033[1;34m============================
-                === Conversor de Divisas ===
-                ============================\033[0m""");
-    }
 
-    public static void DolarAPesoArgentinoTexto() {
-        System.out.println("""
-              :::::::::::::::::::::::::::::::
-              :::Dolares a Pesos argentino:::
-              :::::::::::::::::::::::::::::::""");
-
-    }
     public static void lineaFinal() {
         System.out.println("::::::::::::::::::::::::::::::::");
     }
