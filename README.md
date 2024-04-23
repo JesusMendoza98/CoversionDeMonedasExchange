@@ -16,7 +16,7 @@
   1. Clona este repositorio en tu máquina local
   2. Asegúrate de tener instalado Java en tu sistema
   3. Compila el código usando tu IDE favorito o desde la línea de comandos con <strong><em> `javac *.java`</em></strong>.<br>
-  4. Ejecuta la aplicación con el comando <strong><em>`java Main</em>`</strong>.
+  4. Ejecuta la aplicación con el comando <strong><em>`java Main`</em></strong>.
 ## Uso  
   Una vez que la aplicación esté en funcionamiento, sigue las instrucciones en pantalla para seleccionar 
   las monedas que deseas convertir y ingresar la cantidad a convertir.
