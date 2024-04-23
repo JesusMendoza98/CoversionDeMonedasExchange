@@ -7,81 +7,70 @@ import com.exchange.conversor.textos.Textos;
 
 public class ValoresMonedas {
     public void resultadoconversion(double cantidad, String siglaDivisa, int eleccionDivisa) {
-        double dolar = 0;
-        double pesoArgentino = 0;
-        double realBrasileño = 0;
-        double boliviano = 0;
-        double operacionDivisa;
-
+        double operacionDivisa = 0;
+        double tipoCambio = 0;
 
         ConsultaApiExchange consultaApiExchange = new ConsultaApiExchange();
 
         // Realizar una consulta para obtener las tasas de cambio
-        CurrencyCodeObject currencyCodeObject = consultaApiExchange.buscaTipoDivisa(siglaDivisa); // Por ejemplo, consulta para obtener tasas de cambio de dólar
+        CurrencyCodeObject currencyCodeObject = consultaApiExchange.buscaTipoDivisa(siglaDivisa);
 
         // Verificar si las tasas de cambio se obtuvieron correctamente
         if (currencyCodeObject != null) {
             // Crear una instancia de com.exchange.conversor.currencyvalues.CurrencyCode utilizando las tasas de cambio obtenidas
             CurrencyCode currencyCode = new CurrencyCode(currencyCodeObject);
-            dolar = currencyCode.getDolar();
-            pesoArgentino = currencyCode.getPeso_argentino();
-            realBrasileño = currencyCode.getReal_brasileño();
-            boliviano = currencyCode.getPeso_boliviano();
+            tipoCambio = obtenerTipoCambio(eleccionDivisa, currencyCode);
         } else {
             System.out.println("No se pudieron obtener las tasas de cambio.");
+            return; // Salir del método en caso de error
         }
 
+        // Calcular la operación de conversión según la elección de divisa
+        operacionDivisa = cantidad * tipoCambio;
 
+        // Mostrar el resultado
+        Textos.lineaFinal();
+        System.out.println(":::::Tu cantidad: " + cantidad + " " + siglaDivisa + "::::::");
+        System.out.println(":::Tu resultado: " + operacionDivisa + " " + obtenerMonedaDestino(eleccionDivisa) + "::::");
+        Textos.lineaFinal();
+    }
+
+    // Método auxiliar para obtener el tipo de cambio según la elección de divisa
+    private double obtenerTipoCambio(int eleccionDivisa, CurrencyCode currencyCode) {
+        switch (eleccionDivisa) {
+            case 1: // Dólar a Peso Argentino
+                return currencyCode.getPeso_argentino();
+            case 2: // Peso Argentino a Dólar
+                return currencyCode.getDolar();
+            case 3: // Dólar a Real Brasileño
+                return currencyCode.getReal_brasileño();
+            case 4: // Real Brasileño a Dólar
+            case 6: // Bolivianos a Dólar
+                return currencyCode.getDolar();
+            case 5: // Dólar a Bolivianos
+                return currencyCode.getPeso_boliviano();
+            default:
+                return 0; // Valor predeterminado en caso de elección inválida
+        }
+    }
+
+    // Método auxiliar para obtener la moneda de destino según la elección de divisa
+    private String obtenerMonedaDestino(int eleccionDivisa) {
         switch (eleccionDivisa) {
             case 1:
-                //Dolar a Peso Argentino
-                operacionDivisa = cantidad * pesoArgentino;
-                Textos.lineaFinal();
-                System.out.println(":::::Tu cantidad: "+ cantidad +" " +siglaDivisa+"::::::");
-                System.out.println(":::Tu resultado: " + operacionDivisa +" ARS::::");
-                Textos.lineaFinal();
-                break;
+                return "ARS"; // Peso Argentino
             case 2:
-                operacionDivisa = cantidad * dolar;
-                Textos.lineaFinal();
-                System.out.println(":::::Tu cantidad: "+ cantidad +" " +siglaDivisa+"::::::");
-                System.out.println(":::Tu resultado: " + operacionDivisa +" USD::::");
-                Textos.lineaFinal();
-                break;
-            case 3:
-                operacionDivisa = cantidad * realBrasileño;
-                Textos.lineaFinal();
-                System.out.println(":::::Tu cantidad: "+ cantidad +" " +siglaDivisa+"::::::");
-                System.out.println(":::Tu resultado: " + operacionDivisa +" BRL::::");
-                Textos.lineaFinal();
-                break;
             case 4:
-                Textos.lineaFinal();
-                operacionDivisa = cantidad * dolar;
-                Textos.lineaFinal();
-                System.out.println(":::::Tu cantidad: "+ cantidad +" " +siglaDivisa+"::::::");
-                System.out.println(":::Tu resultado: " + operacionDivisa +" USD::::");
-                Textos.lineaFinal();
-                break;
-            case 5:
-                Textos.lineaFinal();
-                operacionDivisa = cantidad * boliviano;
-                System.out.println(":::::Tu cantidad: "+ cantidad +" " +siglaDivisa+"::::::");
-                System.out.println(":::Tu resultado: " + operacionDivisa +" BOB::::");
-                Textos.lineaFinal();
-                break;
             case 6:
-                Textos.lineaFinal();
-                operacionDivisa = cantidad * dolar;
-                System.out.println(":::::Tu cantidad: "+ cantidad +" " +siglaDivisa+"::::::");
-                System.out.println(":::Tu resultado: " + operacionDivisa +" USD::::");
-                Textos.lineaFinal();
-                break;
+                return "USD"; // Dólar
+            case 3:
+                return "BRL"; // Real Brasileño
+            case 5:
+                return "BOB"; // Bolivianos
             default:
-                break;
-
+                return "";
         }
-
     }
+
 }
 
