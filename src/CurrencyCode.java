@@ -12,49 +12,20 @@ public class CurrencyCode implements Comparable<CurrencyCode> {
         return dolar;
     }
 
-    public void setDolar(double Dolar) {
-        dolar = Dolar;
-    }
-
-    public double getPeso_chileno() {
-        return peso_chileno;
-    }
-
-    public void setPeso_chileno(double peso_chileno) {
-        this.peso_chileno = peso_chileno;
-    }
-
-    public double getPeso_colombiano() {
-        return peso_colombiano;
-    }
-
-    public void setPeso_colombiano(double peso_colombiano) {
-        this.peso_colombiano = peso_colombiano;
-    }
 
     public double getReal_brasileño() {
         return real_brasileño;
-    }
-
-    public void setReal_brasileño(double real_brasileño) {
-        this.real_brasileño = real_brasileño;
     }
 
     public double getPeso_boliviano() {
         return peso_boliviano;
     }
 
-    public void setPeso_boliviano(double peso_boliviano) {
-        this.peso_boliviano = peso_boliviano;
-    }
 
     public double getPeso_argentino() {
         return peso_argentino;
     }
-
-    public void setPeso_argentino(double peso_argentino) {
-        this.peso_argentino = peso_argentino;
-    }
+    
 
     public CurrencyCode(CurrencyCodeObject CurrencyCodeObject){
 this.dolar = CurrencyCodeObject.USD();

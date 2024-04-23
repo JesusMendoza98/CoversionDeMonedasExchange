@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner entradaEleccion = new Scanner(System.in);
         Scanner scanner = new Scanner(System.in);
+        ValoresMonedas resultadoConversionn = new ValoresMonedas();
 
         boolean volverMenu = true;
         int eleccioncase;
@@ -24,14 +25,12 @@ public class Main {
                         System.out.println("Seleccionaste Dolar a Peso Argentino");
                         System.out.print("Digite la Cantidad de dolares: ");
                         divisaSeleccionada = "USD";
-                        ValoresMonedas resultadoConversionn = new ValoresMonedas();
                         resultadoConversionn.resultadoconversion(Double.parseDouble(entrada.nextLine()), divisaSeleccionada, eleccioncase);
                         break;
                     case 2:
                         System.out.println("Pesos Argentino a Dolar");
                         System.out.print("Digite la Cantidad de Pesos Argentino: ");
                         divisaSeleccionada = "ARS";
-                        resultadoConversionn = new ValoresMonedas();
                         resultadoConversionn.resultadoconversion(Double.parseDouble(entrada.nextLine()), divisaSeleccionada, eleccioncase);
 
                         break;
@@ -39,7 +38,6 @@ public class Main {
                         System.out.println("Dolares a Real Brasileño");
                         System.out.print("Digite la Cantidad de dolares: ");
                         divisaSeleccionada = "USD";
-                        resultadoConversionn = new ValoresMonedas();
                         resultadoConversionn.resultadoconversion(Double.parseDouble(entrada.nextLine()), divisaSeleccionada, eleccioncase);
 
                         break;
@@ -47,21 +45,18 @@ public class Main {
                         System.out.println("Real Brasileño a Dolar");
                         System.out.print("Digite la Cantidad de Reales: ");
                         divisaSeleccionada = "BRL";
-                        resultadoConversionn = new ValoresMonedas();
                         resultadoConversionn.resultadoconversion(Double.parseDouble(entrada.nextLine()), divisaSeleccionada, eleccioncase);
                         break;
                     case 5:
                         System.out.println("Dolar a Bolivares");
                         divisaSeleccionada = "USD";
                         System.out.print("Digite la Cantidad de dolares: ");
-                        resultadoConversionn = new ValoresMonedas();
                         resultadoConversionn.resultadoconversion(Double.parseDouble(entrada.nextLine()), divisaSeleccionada, eleccioncase);
                         break;
                     case 6:
                         System.out.println("Bolivares a Dolares");
                         divisaSeleccionada = "BOB";
                         System.out.print("Digite la Cantidad de Bolivares: ");
-                        resultadoConversionn = new ValoresMonedas();
                         resultadoConversionn.resultadoconversion(Double.parseDouble(entrada.nextLine()), divisaSeleccionada, eleccioncase);
                         break;
                     case 7:
