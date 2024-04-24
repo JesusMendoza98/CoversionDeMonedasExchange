@@ -51,7 +51,21 @@ this.peso_chileno = CurrencyCodeObject.CLP();
     }
     @Override
     public String toString() {
-        return String.valueOf((dolar)+peso_argentino+peso_boliviano+ real_brasileño+peso_chileno+peso_colombiano);
+
+        String format = "| %-15s | %-15s |\n";
+
+        String stringBuilder = "┌───────────────────────────────────┐\n" +
+                                String.format(format, "Divisa", "Valor") +
+                "├───────────────────────────────────┤\n" +
+                String.format(format, "Dólar", String.format("%.5f", dolar)) +
+                String.format(format, "Peso Argentino", String.format("%.5f", peso_argentino)) +
+                String.format(format, "Peso Boliviano", String.format("%.5f", peso_boliviano)) +
+                String.format(format, "Real Brasileño", String.format("%.5f", real_brasileño)) +
+                String.format(format, "Peso Chileno", String.format("%.5f", peso_chileno)) +
+                String.format(format, "Peso Colombiano", String.format("%.5f", peso_colombiano)) +
+                "└───────────────────────────────────┘\n";
+
+        return stringBuilder;
 
 }
 }

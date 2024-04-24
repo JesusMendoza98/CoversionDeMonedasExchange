@@ -3,13 +3,17 @@ package com.exchange.conversor.calculos;
 import com.exchange.conversor.currencyvalues.CurrencyCode;
 import com.exchange.conversor.currencyvalues.CurrencyCodeObject;
 import com.exchange.conversor.consultas.ConsultaApiExchange;
-import com.exchange.conversor.consultas.HistorialConsultas;
+import com.exchange.conversor.historial.HistorialConsultas;
 
 
 public class ValoresMonedas {
     private final HistorialConsultas.TuClasePrincipal tuClasePrincipal;
     public ValoresMonedas(HistorialConsultas.TuClasePrincipal tuClasePrincipal) {
         this.tuClasePrincipal = tuClasePrincipal;
+    }
+    public void mostrarMonedasObtenidas(CurrencyCode currencyCode) {
+        // Imprimir las monedas obtenidas
+        System.out.println(currencyCode.toString());
     }
     public void resultadoconversion(double cantidad, String siglaDivisa, int eleccionDivisa) {
         double operacionDivisa;
@@ -26,6 +30,8 @@ public class ValoresMonedas {
             // Crear una instancia de com.exchange.conversor.currencyvalues.CurrencyCode utilizando las tasas de cambio obtenidas
             CurrencyCode currencyCode = new CurrencyCode(currencyCodeObject);
             tipoCambio = obtenerTipoCambio(eleccionDivisa, currencyCode);
+
+
         } else {
             System.out.println("No se pudieron obtener las tasas de cambio.");
             return; // Salir del método en caso de error
@@ -37,10 +43,10 @@ public class ValoresMonedas {
         // Mostrar el resultado
         tuClasePrincipal.agregarConsultaAlHistorial(cantidad, siglaDivisa, obtenerMonedaDestino(eleccionDivisa), operacionDivisa);
 
-        System.out.println("┌────────────────────────────────────────────────┐");
+        System.out.println("┌──────────────────────────────────────┐");
         System.out.println("    Tu cantidad:  " + cantidad + " " + siglaDivisa);
         System.out.println("    Tu resultado: " + operacionDivisa + " " + obtenerMonedaDestino(eleccionDivisa) );
-        System.out.println("└────────────────────────────────────────────────┘");
+        System.out.println("└──────────────────────────────────────┘");
 
     }
 

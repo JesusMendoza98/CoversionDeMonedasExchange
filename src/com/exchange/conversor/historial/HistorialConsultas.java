@@ -1,4 +1,4 @@
-package com.exchange.conversor.consultas;
+package com.exchange.conversor.historial;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +19,7 @@ public class HistorialConsultas {
             return resultado;
         }
 
-        public void setResultado(double resultado) {
-            this.resultado = resultado;
-        }
+
 
         public String getSiglaDivisa() {
             return siglaDivisa;

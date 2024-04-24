@@ -1,6 +1,6 @@
 package com.exchange.conversor.principal;
 
-import com.exchange.conversor.consultas.HistorialConsultas;
+import com.exchange.conversor.historial.HistorialConsultas;
 import com.exchange.conversor.textos.Textos;
 import com.exchange.conversor.calculos.ValoresMonedas;
 
@@ -26,22 +26,23 @@ public class Main {
                 eleccioncase = entradaEleccion.nextInt();
                 switch (eleccioncase) {
                     case 1:
-                        convertirMoneda("\033[0;34mDolar a Peso Argentino\033[0m", "USD", resultadoConversionn, eleccioncase);
+                        convertirMoneda("\033[0;1m        Dolar a Peso Argentino\033[0m", "USD", resultadoConversionn, eleccioncase);
+
                         break;
                     case 2:
-                        convertirMoneda("\033[0;34mPesos Argentino a Dolar\033[0m", "ARS", resultadoConversionn, eleccioncase);
+                        convertirMoneda("\033[0;1m        Pesos Argentino a Dolar\033[0m", "ARS", resultadoConversionn, eleccioncase);
                         break;
                     case 3:
-                        convertirMoneda("\033[0;34mDolares a Real Brasileño\033[0m", "USD", resultadoConversionn, eleccioncase);
+                        convertirMoneda("\033[0;1m        Dolares a Real Brasileño\033[0m", "USD", resultadoConversionn, eleccioncase);
                         break;
                     case 4:
-                        convertirMoneda("\033[0;34mReal Brasileño a Dolar\033[0m", "BRL", resultadoConversionn, eleccioncase);
+                        convertirMoneda("\033[0;1m        Real Brasileño a Dolar\033[0m", "BRL", resultadoConversionn, eleccioncase);
                         break;
                     case 5:
-                        convertirMoneda("\033[0;34mDolar a Bolivares\033[0m", "USD", resultadoConversionn, eleccioncase);
+                        convertirMoneda("\033[0;1m        Dolar a Bolivares\033[0m", "USD", resultadoConversionn, eleccioncase);
                         break;
                     case 6:
-                        convertirMoneda("Bolivares a Dolares\033[0m", "BOB", resultadoConversionn, eleccioncase);
+                        convertirMoneda("\033[0;1m        Bolivares a Dolares\033[0m", "BOB", resultadoConversionn, eleccioncase);
                         break;
                     case 7:
                         //Llamamos al metodo para mostrar nuestro historial.
