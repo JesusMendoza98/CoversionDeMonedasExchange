@@ -1,5 +1,7 @@
 package com.exchange.conversor.calculos;
 
+import com.exchange.conversor.consultas.HistorialConsultas;
+
 import java.util.Scanner;
 
 public class ManejoDatos {
@@ -25,5 +27,6 @@ public class ManejoDatos {
         } while (!cantidadValida);
 
         resultadoConversionn.resultadoconversion(cantidad, divisaSeleccionada, eleccioncase);
+
     }
 }

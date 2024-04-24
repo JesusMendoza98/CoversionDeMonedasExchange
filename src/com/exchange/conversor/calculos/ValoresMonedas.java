@@ -3,12 +3,18 @@ package com.exchange.conversor.calculos;
 import com.exchange.conversor.currencyvalues.CurrencyCode;
 import com.exchange.conversor.currencyvalues.CurrencyCodeObject;
 import com.exchange.conversor.consultas.ConsultaApiExchange;
+import com.exchange.conversor.consultas.HistorialConsultas;
 
 
 public class ValoresMonedas {
+    private final HistorialConsultas.TuClasePrincipal tuClasePrincipal;
+    public ValoresMonedas(HistorialConsultas.TuClasePrincipal tuClasePrincipal) {
+        this.tuClasePrincipal = tuClasePrincipal;
+    }
     public void resultadoconversion(double cantidad, String siglaDivisa, int eleccionDivisa) {
         double operacionDivisa;
         double tipoCambio;
+
 
         ConsultaApiExchange consultaApiExchange = new ConsultaApiExchange();
 
@@ -29,11 +35,13 @@ public class ValoresMonedas {
         operacionDivisa = cantidad * tipoCambio;
 
         // Mostrar el resultado
+        tuClasePrincipal.agregarConsultaAlHistorial(cantidad, siglaDivisa, obtenerMonedaDestino(eleccionDivisa), operacionDivisa);
 
         System.out.println("┌────────────────────────────────────────────────┐");
         System.out.println("    Tu cantidad:  " + cantidad + " " + siglaDivisa);
         System.out.println("    Tu resultado: " + operacionDivisa + " " + obtenerMonedaDestino(eleccionDivisa) );
         System.out.println("└────────────────────────────────────────────────┘");
+
     }
 
     // Método auxiliar para obtener el tipo de cambio según la elección de divisa

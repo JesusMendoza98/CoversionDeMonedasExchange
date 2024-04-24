@@ -1,5 +1,6 @@
 package com.exchange.conversor.principal;
 
+import com.exchange.conversor.consultas.HistorialConsultas;
 import com.exchange.conversor.textos.Textos;
 import com.exchange.conversor.calculos.ValoresMonedas;
 
@@ -11,7 +12,10 @@ import static com.exchange.conversor.calculos.ManejoDatos.convertirMoneda;
 public class Main {
     public static void main(String[] args) {
         Scanner entradaEleccion = new Scanner(System.in);
-        ValoresMonedas resultadoConversionn = new ValoresMonedas();
+
+        HistorialConsultas.TuClasePrincipal tuClasePrincipal = new HistorialConsultas.TuClasePrincipal();
+        ValoresMonedas resultadoConversionn = new ValoresMonedas(tuClasePrincipal);
+       //
 
         int eleccioncase;
 
@@ -40,7 +44,10 @@ public class Main {
                         convertirMoneda("Bolivares a Dolares\033[0m", "BOB", resultadoConversionn, eleccioncase);
                         break;
                     case 7:
-
+                        //Llamamos al metodo para mostrar nuestro historial.
+                        tuClasePrincipal.mostrarHistorialConsultas();
+                        break;
+                    case 8:
                         System.out.println("""
                            ┌────────────────────────────────────────────────┐
                                           ¡Hasta la Proxima!
@@ -57,7 +64,7 @@ public class Main {
                 entradaEleccion.nextLine(); // Consumir la línea completa para avanzar
                 eleccioncase = -1; // Reiniciar la eleccion
             }
-        } while (eleccioncase != 7);
+        } while (eleccioncase != 8);
 
         entradaEleccion.close();
     }

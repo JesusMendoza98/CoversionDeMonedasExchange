@@ -16,7 +16,8 @@ public class Textos {
    │     4      │   Real Brasileño a Dolar          │
    │     5      │   Dolares a Bolivares             │
    │     6      │   Bolivares a Dolares             │
-   │     7      │   Salir del Programa              │
+   │     7      │   Mostrar Historial               │
+   │     8      │   Salir del Programa              │
    └────────────────────────────────────────────────┘""");
     }
     }
