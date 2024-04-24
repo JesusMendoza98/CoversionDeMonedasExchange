@@ -23,15 +23,55 @@
 
 
  ## Imagenes de la Aplicacion
+ <table>
+  <tr>
+    <td style="border: 0px solid white; margin:0px;">
+     
+1. Menu de Opciones
+      
+2. Muestra tu conversion seleccionada y sus equivalentes en otras monedas
+    
+          
+3. Detalle las monedas y sus respectivos valores.
+      
+    </td>
+    <td style="border: 0px solid white; padding: 20px;">
+      <img src="https://github.com/JesusMendoza98/CoversionDeMonedasExchange/assets/157655959/c6153b0b-d36f-4c4b-927f-a596ba70e2c1" alt="Imagen" width="300"/>
+    </td>
+  </tr>
+    <tr>
+    <td style="border: 0px solid white; margin:0px;">
+     
+1. Tabla de Conversion
+   
+        
+2. Solicita que digites la cantidad deseada
+     
+           
+3. Resultado de la conversion, en el cual se puede vizualizar
+   la cantidad y el equivalente
+     
+    </td>
+    <td style="border: 1px solid black; padding: 20px;">
+      <img src="https://github.com/JesusMendoza98/CoversionDeMonedasExchange/assets/157655959/d6613a69-cc12-41c0-9cd2-c3835c345bde" alt="Imagen" width="300"/>
+    </td>
+    </tr>
+<tr>
+   <td style="border: 0px solid white; margin:0px;">
+1. Tabla de Historial de Conversiones<br>
+2. Muestra Cantidad, divisas y su resultado
+   </td>
+    <td style="border: 1px solid black; padding: 20px;">
+      <img src="https://github.com/JesusMendoza98/CoversionDeMonedasExchange/assets/157655959/13965749-78de-4d33-abb6-f5f79da5f487"/>
+    </td>
+    </tr>
+</table>
+
+  
 
 
-  ![Conversion Completa](https://github.com/JesusMendoza98/CoversionDeMonedasExchange/assets/157655959/f7696e64-b922-40b9-94f5-d83cb1a5cdc4)
 
-<ul>
-   <li>1.  Se muestra el menu basico, donde se pueden elegir multiples opciones de conversion </li>
-   <li>2.  Utiliza la API Exchange para obtener tasas de cambio actualizadas, y realiza el calculo con la cantidad digitada por el usuario</li>
-   <li>3. Presenta una interfaz de usuario simple con los resultados, tanto de la cantidad y la conversion</li>
-</ul>
+
 
   
  ## Construido con 🛠️
