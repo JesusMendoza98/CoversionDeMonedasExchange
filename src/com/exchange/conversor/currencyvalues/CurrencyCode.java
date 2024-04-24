@@ -9,7 +9,6 @@ public class CurrencyCode implements Comparable<CurrencyCode> {
     private double peso_colombiano;
 
 
-
     public double getDolar() {
         return dolar;
     }
@@ -29,33 +28,30 @@ public class CurrencyCode implements Comparable<CurrencyCode> {
     }
 
 
-    public CurrencyCode(CurrencyCodeObject CurrencyCodeObject){
-this.dolar = CurrencyCodeObject.USD();
-this.peso_argentino = CurrencyCodeObject.ARS();
-this.peso_boliviano = CurrencyCodeObject.BOB();
-this.peso_colombiano = CurrencyCodeObject.COP();
-this.real_brasileño = CurrencyCodeObject.BRL();
-this.peso_chileno = CurrencyCodeObject.CLP();
+    public CurrencyCode(CurrencyCodeObject CurrencyCodeObject) {
+        this.dolar = CurrencyCodeObject.USD();
+        this.peso_argentino = CurrencyCodeObject.ARS();
+        this.peso_boliviano = CurrencyCodeObject.BOB();
+        this.peso_colombiano = CurrencyCodeObject.COP();
+        this.real_brasileño = CurrencyCodeObject.BRL();
+        this.peso_chileno = CurrencyCodeObject.CLP();
 
 
-
-}
-
-
-
+    }
 
 
     @Override
     public int compareTo(CurrencyCode o) {
         return Double.compare(this.getDolar(), o.getDolar());
     }
+
     @Override
     public String toString() {
 
         String format = "| %-15s | %-15s |\n";
 
         String stringBuilder = "┌───────────────────────────────────┐\n" +
-                                String.format(format, "Divisa", "Valor") +
+                String.format(format, "Divisa", "Valor") +
                 "├───────────────────────────────────┤\n" +
                 String.format(format, "Dólar", String.format("%.5f", dolar)) +
                 String.format(format, "Peso Argentino", String.format("%.5f", peso_argentino)) +
@@ -67,5 +63,5 @@ this.peso_chileno = CurrencyCodeObject.CLP();
 
         return stringBuilder;
 
-}
+    }
 }

@@ -15,7 +15,7 @@ public class Main {
 
         HistorialConsultas.TuClasePrincipal tuClasePrincipal = new HistorialConsultas.TuClasePrincipal();
         ValoresMonedas resultadoConversionn = new ValoresMonedas(tuClasePrincipal);
-       //
+        //
 
         int eleccioncase;
 
@@ -50,11 +50,11 @@ public class Main {
                         break;
                     case 8:
                         System.out.println("""
-                           ┌────────────────────────────────────────────────┐
-                                          ¡Hasta la Proxima!
-                           └────────────────────────────────────────────────┘
-                           
-                           """);
+                                ┌────────────────────────────────────────────────┐
+                                               ¡Hasta la Proxima!
+                                └────────────────────────────────────────────────┘
+                                                           
+                                """);
                         break;
                     default:
                         System.out.println("Selecciona una opcion del menu:");
@@ -69,7 +69,6 @@ public class Main {
 
         entradaEleccion.close();
     }
-
 
 
 }
