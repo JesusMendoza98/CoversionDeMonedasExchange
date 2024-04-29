@@ -1,12 +1,12 @@
 package com.exchange.conversor.currencyvalues;
 
 public class CurrencyCode implements Comparable<CurrencyCode> {
-    private double dolar;
-    private double peso_argentino;
-    private double peso_boliviano;
-    private double real_brasileño;
-    private double peso_chileno;
-    private double peso_colombiano;
+    private final double dolar;
+    private final double peso_argentino;
+    private final double peso_boliviano;
+    private final double real_brasileño;
+    private final double peso_chileno;
+    private final double peso_colombiano;
 
 
     public double getDolar() {
